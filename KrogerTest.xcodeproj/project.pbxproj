@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1E9B9B7D258FDD7600EC5172 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9B9B7C258FDD7600EC5172 /* SearchBar.swift */; };
+		1E9B9B8C258FE3E000EC5172 /* LocationResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9B9B8B258FE3E000EC5172 /* LocationResultView.swift */; };
+		1E9B9B92258FEF8600EC5172 /* LocationResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9B9B91258FEF8600EC5172 /* LocationResultViewModel.swift */; };
+		1E9B9B98258FF2F400EC5172 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9B9B97258FF2F400EC5172 /* Date+Extensions.swift */; };
 		A5031319257F030F00213060 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5031318257F030F00213060 /* Locations.swift */; };
 		A50C807725804F2F004F9622 /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C807625804F2F004F9622 /* APITarget.swift */; };
 		A50C807D2580510D004F9622 /* KrogerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C807C2580510D004F9622 /* KrogerAPI.swift */; };
@@ -41,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		1E9B9B7C258FDD7600EC5172 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		1E9B9B8B258FE3E000EC5172 /* LocationResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResultView.swift; sourceTree = "<group>"; };
+		1E9B9B91258FEF8600EC5172 /* LocationResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResultViewModel.swift; sourceTree = "<group>"; };
+		1E9B9B97258FF2F400EC5172 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A5031318257F030F00213060 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		A50C807625804F2F004F9622 /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
 		A50C807C2580510D004F9622 /* KrogerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrogerAPI.swift; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				1E9B9B7C258FDD7600EC5172 /* SearchBar.swift */,
+				1E9B9B8B258FE3E000EC5172 /* LocationResultView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -100,6 +107,22 @@
 				A5937B76257D9CA100E15E95 /* LocationsScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		1E9B9B90258FEF5F00EC5172 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1E9B9B91258FEF8600EC5172 /* LocationResultViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1E9B9B96258FF2D300EC5172 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1E9B9B97258FF2F400EC5172 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A5031316257F02EA00213060 /* Views */ = {
@@ -170,6 +193,8 @@
 		A5937B73257D9CA100E15E95 /* KrogerTest */ = {
 			isa = PBXGroup;
 			children = (
+				1E9B9B96258FF2D300EC5172 /* Extensions */,
+				1E9B9B90258FEF5F00EC5172 /* ViewModels */,
 				A5937B74257D9CA100E15E95 /* KrogerTestApp.swift */,
 				A50C807425804F09004F9622 /* Networking */,
 				A5031317257F02F800213060 /* Models */,
@@ -338,8 +363,11 @@
 			files = (
 				A5031319257F030F00213060 /* Locations.swift in Sources */,
 				A5937B77257D9CA100E15E95 /* LocationsScreen.swift in Sources */,
+				1E9B9B8C258FE3E000EC5172 /* LocationResultView.swift in Sources */,
 				A50C808525805E9A004F9622 /* KrogerNetworkManager.swift in Sources */,
 				A5748D562582F87400EA77B7 /* NetworkManager.swift in Sources */,
+				1E9B9B98258FF2F400EC5172 /* Date+Extensions.swift in Sources */,
+				1E9B9B92258FEF8600EC5172 /* LocationResultViewModel.swift in Sources */,
 				A50C807D2580510D004F9622 /* KrogerAPI.swift in Sources */,
 				1E9B9B7D258FDD7600EC5172 /* SearchBar.swift in Sources */,
 				A5937B75257D9CA100E15E95 /* KrogerTestApp.swift in Sources */,

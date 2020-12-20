@@ -17,6 +17,8 @@ struct Locations: Codable {
         let address: Address?
         let geoLocation: GeoLocation?
         let departments: [Department]?
+        let hours: Hours?
+        let phone: String?
     }
     
     struct Address: Codable {
@@ -35,5 +37,23 @@ struct Locations: Codable {
     struct Department: Codable {
         let departmentId: String?
         let name: String?
+    }
+
+    struct Hours: Codable {
+        let timezone: String?
+        let open24: Bool?
+        let monday: DayHours?
+        let tuesday: DayHours?
+        let wednesday: DayHours?
+        let thursday: DayHours?
+        let friday: DayHours?
+        let saturday: DayHours?
+        let sunday: DayHours?
+    }
+    
+    struct DayHours: Codable {
+        let open: String?
+        let closed: String?
+        let open24: Bool?
     }
 }
