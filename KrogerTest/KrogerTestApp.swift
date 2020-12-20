@@ -11,7 +11,7 @@ import SwiftUI
 struct KrogerTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LocationsScreen()
         }
     }
 }
