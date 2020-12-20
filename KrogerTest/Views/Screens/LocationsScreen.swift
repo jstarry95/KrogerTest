@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LocationsScreen: View {
     
+    @State private var searchText = ""
+    
     init() {
         let api = KrogerAPI(target: .locations(filters: ["filter.zipCode.near": "75056"]))
         KrogerNetworkManager.shared.makeRequest(to: api) { result in
@@ -25,20 +27,30 @@ struct LocationsScreen: View {
         VStack {
             Spacer()
                 .frame(height: 24)
-            Text("KrogerLogo")
-                .padding()
+            Image(uiImage: #imageLiteral(resourceName: "kroger logo"))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            HStack {
+                Spacer()
+                    .frame(width: 24)
+                Text("Find a store")
+                    .font(.system(size: 32, weight: .bold, design: .default))
+                Spacer()
+            }
             Spacer()
-                .frame(height: 32)
-            Text("Find a store")
-                .padding()
-            Spacer()
-                .frame(height: 8)
-            Text("Search bar")
-                .padding()
+                .frame(height: 16)
+            HStack {
+                Spacer()
+                    .frame(width: 24)
+                SearchBar(text: self.$searchText)
+                Spacer()
+                    .frame(width: 24)
+            }
             Spacer()
                 .frame(height: 12)
             Text("Results when you get them")
                 .padding()
+            Spacer()
         }
     }
 }
