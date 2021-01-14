@@ -10,18 +10,7 @@ import SwiftUI
 struct LocationsScreen: View {
     
     @State private var searchText = ""
-    
-    init() {
-        let api = KrogerAPI(target: .locations(filters: ["filter.zipCode.near": "75056"]))
-        KrogerNetworkManager.shared.makeRequest(to: api) { result in
-            switch result {
-            case .success(let data):
-                print("we done did it")
-            case .failure(let error):
-                print("we done fucked up: \(error)")
-            }
-        }
-    }
+    @ObservedObject private var viewModel: LocationsViewModel = LocationsViewModel()
     
     var body: some View {
         VStack {
@@ -43,13 +32,22 @@ struct LocationsScreen: View {
                 Spacer()
                     .frame(width: 24)
                 SearchBar(text: self.$searchText)
+                Button(action: {
+                    self.viewModel.search(zipCode: self.searchText)
+                }, label: {
+                    Text("Search")
+                })
                 Spacer()
                     .frame(width: 24)
             }
             Spacer()
                 .frame(height: 12)
-            Text("Results when you get them")
-                .padding()
+            if viewModel.results.isEmpty {
+                Spacer()
+                Text("No Results")
+            } else {
+                //add list of results
+            }
             Spacer()
         }
     }

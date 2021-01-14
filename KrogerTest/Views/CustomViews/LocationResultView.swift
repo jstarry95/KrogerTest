@@ -17,10 +17,30 @@ struct LocationResultView: View {
     }
     
     var body: some View {
+        
         let name = self.viewModel.getName()
+        let isOpen = self.viewModel.getIsOpen()
+        let address = self.viewModel.getAddress()
+        
         VStack {
-            Text(name)
             HStack {
+                Spacer()
+                    .frame(width: 16)
+                Text(name)
+                    .font(.system(size: 24))
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Spacer()
+            }
+            Spacer()
+                .frame(height: 8)
+            HStack {
+                Spacer()
+                    .frame(width: 16)
+                Text(address)
+                Spacer()
+                Text(isOpen ? "Open" : "Closed")
+                Spacer()
+                    .frame(width: 24)
             }
         }
     }

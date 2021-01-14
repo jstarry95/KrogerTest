@@ -20,8 +20,23 @@ struct LocationResultViewModel {
         return self.location.name ?? "Kroger"
     }
     
-    func getCity() -> String? {
-        return self.location.address?.city
+    func getAddress() -> String {
+        let city = self.location.address?.city
+        let state = self.location.address?.state
+        let zipCode = self.location.address?.zipCode
+        let address: String
+        
+        if let unwrappedCity = city, let unwrappedState = state, let unwrappedZip = zipCode {
+            address = "\(unwrappedCity), \(unwrappedState) \(unwrappedZip)"
+        } else if let unwrappedCity = city, let unwrappedState = state {
+            address = "\(unwrappedCity), \(unwrappedState)"
+        } else if let unwrappedCity = city {
+            address = unwrappedCity
+        } else {
+            address = "N/A"
+        }
+        
+        return address
     }
     
     func getIsOpen() -> Bool {
